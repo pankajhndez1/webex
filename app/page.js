@@ -9,7 +9,7 @@ export default function App() {
     <div>
       <ReduxProvider>
         <Header />
-        <div className="grid md:gap-x-3 grid-flow-row md:grid-flow-col grid-cols-2">
+        <div className="flex justify-center items-center space-x-7 py-20">
           {USER_TYPES?.map((userType, i) => (
             <div key={i}>
               <ProfileCard title={userType} />
