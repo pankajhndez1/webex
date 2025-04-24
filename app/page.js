@@ -1,19 +1,15 @@
-// "use client";
-import { store } from "@/redux/store";
-import { Provider } from "react-redux";
-import React from "react";
-
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import ProfileCard from "@/components/profileCard";
 import { USER_TYPES } from "@/utils/constants";
+import ReduxProvider from "@/components/reduxProvider";
 
 export default function App() {
   return (
     <div>
-      {/* <Provider store={store}> */}
+      <ReduxProvider>
         <Header />
-        <div className="grid md:gap-x-3 grid-flow-row md:rid-flow-col grid-cols-2 ">
+        <div className="grid md:gap-x-3 grid-flow-row md:grid-flow-col grid-cols-2">
           {USER_TYPES?.map((userType, i) => (
             <div key={i}>
               <ProfileCard title={userType} />
@@ -21,7 +17,7 @@ export default function App() {
           ))}
         </div>
         <Footer />
-      {/* </Provider> */}
+      </ReduxProvider>
     </div>
   );
 }
