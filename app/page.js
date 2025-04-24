@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import { store } from "@/redux/store";
 import { Provider } from "react-redux";
 import React from "react";
@@ -11,18 +11,17 @@ import { USER_TYPES } from "@/utils/constants";
 export default function App() {
   return (
     <div>
-      <Provider store={store}>
+      {/* <Provider store={store}> */}
         <Header />
-        <div className="grid grid-col-2 gap-x-2">
+        <div className="grid md:gap-x-3 grid-flow-row md:rid-flow-col grid-cols-2 ">
           {USER_TYPES?.map((userType, i) => (
             <div key={i}>
               <ProfileCard title={userType} />
             </div>
           ))}
         </div>
-
         <Footer />
-      </Provider>
+      {/* </Provider> */}
     </div>
   );
 }
