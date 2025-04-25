@@ -56,14 +56,13 @@ export default function ProductDetail() {
   };
 
   const onSubmit = () => {
-    console.log(submittedData, "submittedData");
     dispatch(setTotalCartItems(submittedData.length));
   };
 
 
   return (
     <div className="max-w-6xl mx-auto p-4 bg-white">
-      {/* Header with back button */}
+      
       <div className="mb-6 pt-20">
         <Link
           href="/products"
@@ -75,7 +74,7 @@ export default function ProductDetail() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Left side: Product Images */}
+        
         <div className="flex flex-col">
           <div className="mb-4 border rounded-lg overflow-hidden">
             <Image
@@ -87,7 +86,7 @@ export default function ProductDetail() {
             />
           </div>
 
-          {/* Thumbnail Gallery */}
+          
           <div className="grid grid-cols-4 gap-2">
             {[1, 2, 3, 4].map((i) => (
               <div key={i} className="border rounded-lg overflow-hidden">
@@ -103,11 +102,11 @@ export default function ProductDetail() {
           </div>
         </div>
 
-        {/* Right side: Product Info */}
+        
         <div className="flex flex-col">
           <h1 className="text-2xl font-bold mb-2 capitalize">{productTitle}</h1>
 
-          {/* Rating */}
+          
           <div className="flex items-center mb-4">
             <div className="flex mr-2">
               {[1, 2, 3, 4, 5].map((star) => (
@@ -117,7 +116,7 @@ export default function ProductDetail() {
             <span className="text-sm text-gray-600">5.0 (400 Sell)</span>
           </div>
 
-          {/* Price */}
+          
           <div className="flex items-center mb-6">
             <span className="text-2xl font-bold mr-2">$120</span>
             <span className="text-gray-500 line-through mr-2">$200</span>
@@ -127,7 +126,7 @@ export default function ProductDetail() {
           </div>
 
           <form onSubmit={handleSubmit(onSubmit)}>
-            {/* Color selection */}
+            
             <div className="mb-6">
               <p className="text-gray-700 mb-2">Color</p>
               <div className="relative">
@@ -153,7 +152,7 @@ export default function ProductDetail() {
               </div>
             </div>
 
-            {/* Quantity */}
+            
             <div className="mb-6">
               <p className="text-gray-700 mb-2">Quantity</p>
               <div className="flex items-center">
@@ -179,7 +178,7 @@ export default function ProductDetail() {
               </div>
             </div>
 
-            {/* Action buttons */}
+            
             <div className="flex gap-4 mb-8">
               <button
                 type="submit"
@@ -203,7 +202,7 @@ export default function ProductDetail() {
             </div>
           </form>
 
-          {/* Item details */}
+          
           <div className="mb-4">
             <h2 className="text-lg font-semibold mb-2">Item Detail</h2>
             <p className="text-gray-600 text-sm mb-4">

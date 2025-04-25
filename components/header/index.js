@@ -11,14 +11,11 @@ const Header = () => {
   return (
     <header className="w-full bg-white shadow-sm px-6 py-4 fixed top-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Logo / Brand */}
         <div className="flex items-center space-x-2">
           <Link href={"/"}>
             <span className="font-bold text-lg text-black">Shop Bag</span>
           </Link>
         </div>
-
-        {/* Desktop Menu */}
         <div className="hidden md:flex space-x-3 relative">
           <div>
             <Image src={"/images/cart.svg"} alt="cart" height={20} width={20} />

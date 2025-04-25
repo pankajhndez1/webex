@@ -21,7 +21,7 @@ export const cartSlice = createSlice({
     },
     resetCart:(state)=>{
       state.totalCartItems = 0;
-      state.submittedData = [];  // Empty the cart items
+      state.submittedData = [];  
       state.value = 0;    
     },
     incrementByAmount: (state, action) => {

@@ -66,7 +66,6 @@ export default function ProductList() {
   return (
     <div className="max-w-4xl mx-auto p-6">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-        {/* Dropzone */}
         <div
           {...getRootProps()}
           className={`border-2 border-dashed rounded-lg p-8 text-center cursor-pointer transition-colors ${
