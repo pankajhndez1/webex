@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
   const { totalCartItems } = useSelector((state) => state.cart);
-  console.log(totalCartItems, "totalCartItems");
 
   return (
     <header className="w-full bg-white shadow-sm px-6 py-4 fixed top-0 z-50">
