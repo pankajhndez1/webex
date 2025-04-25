@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const ProductCard = ({ product }) => {
     
     const { title, description, files } = product;
@@ -5,9 +7,17 @@ const ProductCard = ({ product }) => {
     const imagePreview = files && files[0]?.preview;
   
     return (
-      <div className=" bg-white shadow-md rounded-lg overflow-hidden">
-        <div >
-          {imagePreview && <img src={imagePreview} alt={title} className="w-full h-64 object-cover" />}
+      <div className=" bg-white shadow-md rounded-lg overflow-hidden ">
+        <div>
+          {imagePreview && (
+            <Image
+              src="/images/tshirt.jpg"
+              alt="T-Shirt"
+              width={500}
+              height={500}  
+              className="object-cover"
+            />
+          )}
         </div>
         <div className=" p-4">
           <h2 className="text-xl font-semibold">{title}</h2>
