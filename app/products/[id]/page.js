@@ -104,7 +104,8 @@ export default function ProductDetail() {
 
         
         <div className="flex flex-col">
-          <h1 className="text-2xl font-bold mb-2 capitalize">{productTitle}</h1>
+          <h1 className="text-2xl font-bold mb-2 capitalize">
+            {decodeURIComponent(productTitle)}</h1>
 
           
           <div className="flex items-center mb-4">
