@@ -18,21 +18,20 @@ const Header = () => {
             <span className="font-bold text-lg text-black">Shop Bag</span>
           </Link>
         </div>
-        {(
-          <div className="hidden md:flex space-x-3 relative">
-            <div>
-              <Image
-                src={"/images/cart.svg"}
-                alt="cart"
-                height={20}
-                width={20}
-              />
-            </div>
-            <div className="absolute font-bold rounded-full bottom-1.5 left-4 bg-gray-300 text-black w-7 h-7 text-sm flex items-center justify-center ">
-              {totalCartItems}
-            </div>
+
+        <div className="hidden md:flex space-x-3 relative">
+        
+          <Link href={"/users"} className="cursor-pointer absolute right-10 hover:font-semibold">
+            Users
+          </Link>
+     
+          <div>
+            <Image src={"/images/cart.svg"} alt="cart" height={20} width={20} />
           </div>
-        )}
+          <div className="absolute font-bold rounded-full bottom-1.5 left-4 bg-gray-300 text-black w-7 h-7 text-sm flex items-center justify-center ">
+            {totalCartItems}
+          </div>
+        </div>
       </div>
     </header>
   );
