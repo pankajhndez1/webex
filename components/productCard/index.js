@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const ProductCard = ({ product }) => {
     
@@ -8,6 +9,7 @@ const ProductCard = ({ product }) => {
   
     return (
       <div className=" bg-white shadow-md rounded-lg overflow-hidden ">
+        <Link href={`/products/${title}`}>
         <div>
           {imagePreview && (
             <Image
@@ -23,6 +25,7 @@ const ProductCard = ({ product }) => {
           <h2 className="text-xl font-semibold">{title}</h2>
           <p className="text-gray-700 mt-2">{description}</p>
         </div>
+        </Link>
       </div>
     );
   };
