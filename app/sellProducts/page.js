@@ -84,8 +84,49 @@ export default function ProductList() {
           </div>
         </div>
 
-        {/* Preview Files */}
-        {files.length > 0 && (
+        
+
+        {/* Title and Description in 2 columns */}
+        <div className="grid grid-cols-1  gap-4">
+          {/* Title Field using reusable component */}
+          <FormInput
+            id="title"
+            label="Title"
+            placeholder="Enter title"
+            register={register}
+            errors={errors}
+            className='p-1.5 w-full border border-gray-300 rounded-md'
+            validation={{
+              required: "Title is required",
+            }}
+          />
+
+          {/* Description Field using reusable component */}
+          <FormInput
+            id="description"
+            label="Description"
+            placeholder="Enter description"
+            register={register}
+            errors={errors}
+            className='p-1.5 w-full border border-gray-300 rounded-md'
+            validation={{
+              required: "Description is required",
+            }}
+            isTextarea={true}
+            rows={3}
+          />
+        </div>
+        <div className="flex space-x-4">
+          <Button type="button" className='!bg-gray-200 !text-black !font-medium' variant="secondary" onClick={handleCancel}>
+            Cancel
+          </Button>
+          <Button type="submit" variant="primary" className='!bg-black !text-white !font-medium'>
+            Save
+          </Button>
+        </div>
+      </form>
+      {/* Preview Files */}
+      {files.length > 0 && (
           <div className="mt-4">
             <h3 className="text-sm font-medium text-gray-700">
               Selected Files:
@@ -103,46 +144,6 @@ export default function ProductList() {
             </ul>
           </div>
         )}
-
-        {/* Title and Description in 2 columns */}
-        <div className="grid grid-cols-1  gap-4">
-          {/* Title Field using reusable component */}
-          <FormInput
-            id="title"
-            label="Title"
-            placeholder="Enter title"
-            register={register}
-            errors={errors}
-            className='p-1 w-full border border-gray-300 rounded-md'
-            validation={{
-              required: "Title is required",
-            }}
-          />
-
-          {/* Description Field using reusable component */}
-          <FormInput
-            id="description"
-            label="Description"
-            placeholder="Enter description"
-            register={register}
-            errors={errors}
-            className='p-1 w-full border border-gray-300 rounded-md'
-            validation={{
-              required: "Description is required",
-            }}
-            isTextarea={true}
-            rows={3}
-          />
-        </div>
-        <div className="flex space-x-4">
-          <Button type="button" className='!bg-gray-200 !text-black !font-medium' variant="secondary" onClick={handleCancel}>
-            Cancel
-          </Button>
-          <Button type="submit" variant="primary" className='!bg-black !text-white !font-medium'>
-            Save
-          </Button>
-        </div>
-      </form>
     </div>
   );
 }
