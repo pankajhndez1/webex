@@ -1,5 +1,5 @@
 "use client";
-import { hideCartRoutes } from "@/utils/constants";
+
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
   const { totalCartItems } = useSelector((state) => state.cart);
-  const path = usePathname();
+
   
   return (
     <header className="w-full bg-white shadow-sm px-6 py-4 fixed top-0 z-50">
@@ -18,7 +18,7 @@ const Header = () => {
             <span className="font-bold text-lg text-black">Shop Bag</span>
           </Link>
         </div>
-        {!hideCartRoutes?.includes(path) && (
+        {(
           <div className="hidden md:flex space-x-3 relative">
             <div>
               <Image
