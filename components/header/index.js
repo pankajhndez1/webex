@@ -28,7 +28,7 @@ const Header = () => {
                 width={20}
               />
             </div>
-            <div className="absolute font-bold rounded-full bottom-1.5 left-2 bg-gray-300 text-black w-7 h-7 text-md flex items-center justify-center z-[-10]">
+            <div className="absolute font-bold rounded-full bottom-1.5 left-4 bg-gray-300 text-black w-7 h-7 text-sm flex items-center justify-center ">
               {totalCartItems}
             </div>
           </div>
