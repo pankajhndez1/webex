@@ -2,14 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import React from "react";
 import { useSelector } from "react-redux";
+import { useSession, signIn, signOut } from "next-auth/react";
+import Button from "../button";
 
 const Header = () => {
   const { totalCartItems } = useSelector((state) => state.cart);
+  const { data: session } = useSession();
 
-  
   return (
     <header className="w-full bg-white shadow-sm px-6 py-4  top-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -20,11 +21,19 @@ const Header = () => {
         </div>
 
         <div className="hidden md:flex space-x-3 relative">
-        
-          <Link href={"/users"} className="cursor-pointer absolute right-10 hover:font-semibold">
+          <Link
+            href={"/users"}
+            className="cursor-pointer absolute right-10 hover:font-semibold"
+          >
             Users
           </Link>
-     
+
+          {session ? (
+            <Button onClick={() => signOut()}>sign Out</Button>
+          ) : (
+            <Button onClick={() => signIn()}>sign In</Button>
+          )}
+
           <div>
             <Image src={"/images/cart.svg"} alt="cart" height={20} width={20} />
           </div>
