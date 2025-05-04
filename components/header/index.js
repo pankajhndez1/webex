@@ -20,33 +20,34 @@ const Header = () => {
           </Link>
         </div>
         <div>
-          <div className='flex border-2 gap-20 '>
+          <div className="flex gap-20 justify-center items-center p-1">
+            {session ? (
+              <Button onClick={() => signOut()}>sign Out</Button>
+            ) : (
+              <Button onClick={() => signIn()}>sign In</Button>
+            )}
+            <div className="hidden md:flex space-x-3 relative">
+              <Link
+                href={"/users"}
+                className="cursor-pointer absolute right-10 hover:font-semibold"
+              >
+                Users
+              </Link>
 
-        {session ? (
-            <Button onClick={() => signOut()}>sign Out</Button>
-          ) : (
-            <Button onClick={() => signIn()}>sign In</Button>
-          )}
-
-        <div className="hidden md:flex space-x-3 relative">
-          <Link
-            href={"/users"}
-            className="cursor-pointer absolute right-10 hover:font-semibold"
-          >
-            Users
-          </Link>
-
-         
-          <div>
-            <Image src={"/images/cart.svg"} alt="cart" height={20} width={20} />
-          </div>
-          <div className="absolute font-bold rounded-full bottom-1.5 left-4 bg-gray-300 text-black w-7 h-7 text-sm flex items-center justify-center ">
-            {totalCartItems}
+              <div>
+                <Image
+                  src={"/images/cart.svg"}
+                  alt="cart"
+                  height={20}
+                  width={20}
+                />
+              </div>
+              <div className="absolute font-bold rounded-full bottom-1.5 left-4 bg-gray-300 text-black w-7 h-7 text-sm flex items-center justify-center ">
+                {totalCartItems}
+              </div>
+            </div>
           </div>
         </div>
-        </div>
-
-          </div>
       </div>
     </header>
   );
