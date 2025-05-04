@@ -22,9 +22,9 @@ const Header = () => {
         <div>
           <div className="flex gap-20 justify-center items-center p-1">
             {session ? (
-              <Button onClick={() => signOut()}>sign Out</Button>
+              <Button className="cursor-pointer" onClick={() => signOut()}>sign Out</Button>
             ) : (
-              <Button onClick={() => signIn()}>sign In</Button>
+              <Button className="cursor-pointer" onClick={() => signIn('github')}>sign In</Button>
             )}
             <div className="hidden md:flex space-x-3 relative">
               <Link
