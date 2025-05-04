@@ -19,6 +19,14 @@ const Header = () => {
             <span className="font-bold text-lg text-black">Shop Bag</span>
           </Link>
         </div>
+        <div>
+          <div className='flex border-2 gap-20 '>
+
+        {session ? (
+            <Button onClick={() => signOut()}>sign Out</Button>
+          ) : (
+            <Button onClick={() => signIn()}>sign In</Button>
+          )}
 
         <div className="hidden md:flex space-x-3 relative">
           <Link
@@ -28,12 +36,7 @@ const Header = () => {
             Users
           </Link>
 
-          {session ? (
-            <Button onClick={() => signOut()}>sign Out</Button>
-          ) : (
-            <Button onClick={() => signIn()}>sign In</Button>
-          )}
-
+         
           <div>
             <Image src={"/images/cart.svg"} alt="cart" height={20} width={20} />
           </div>
@@ -41,6 +44,9 @@ const Header = () => {
             {totalCartItems}
           </div>
         </div>
+        </div>
+
+          </div>
       </div>
     </header>
   );
